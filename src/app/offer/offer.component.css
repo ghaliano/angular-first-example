@@ -1,0 +1,8 @@
+.compteur-disabled {
+    background: gray;
+}
+
+.compteur-enabled {
+    background: blueviolet;
+    color: white;
+}

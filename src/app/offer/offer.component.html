@@ -1,0 +1,18 @@
+<p>
+    offer works!
+    <button type="button"
+            (click)="executeClick()">Click({{compteur}})
+    </button>
+    <button
+            [ngClass]="compteurEnabled?
+            'compteur-enabled':'compteur-disabled'"
+
+            [hidden]="!compteurEnabled"
+            type="button" (click)="stopClick()"
+    >Stop compteur</button>
+    <button *ngIf="!compteurEnabled" type="button" (click)="restartClick()">Restart compteur</button>
+    <button type="button" (click)="initClick()">Init compteur</button>
+</p>
+<div>
+    count: {{compteur}}
+</div>
