@@ -4,14 +4,9 @@
 <ul>
   <li *ngFor="let offer of offers">
     #{{ offer.id }}: {{ offer.name }}
-    <button (click)="selectOffer(offer.id)">edit</button>
+    <a routerLink="/offers/edit/{{offer.id}}"  (click)="selectOffer(offer.id)">edit</a>
     <button (click)="deleteOffer(offer.id)">delete</button>
   </li>
 </ul>
 <button (click)="clearOffers()" *ngIf="offers.length">clear offers</button>
 <br />
-<h4>Nouveau offre</h4>
-<input type="text" [(ngModel)]="offer.name" name="name"/>
-<button [disabled]="!offer.name" (click)="processOffer()">
-  {{ offer.id ? 'Edit offer':'Add offer'}}
-</button>
