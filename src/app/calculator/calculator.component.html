@@ -1,0 +1,68 @@
+<div class="calculator">
+    <input
+            class="calculator-screen"
+            type="text" name="operation"
+           [disabled]="!isExpressionValide()"
+           [(ngModel)]="operation"
+           [ngClass]="!isExpressionValide()?'op-invalide' : 'op-valide'"
+    >
+    <div class="calculator-keys">
+        <ng-container>
+            <button *ngFor="let key of keys" type="button" class="operator" (click)="built(key)">
+                {{key}}
+            </button>
+        </ng-container>
+
+        <ng-container>
+            <button *ngFor="let key of operators" type="button" class="operator" (click)="built(key)">
+                {{key}}
+            </button>
+        </ng-container>
+
+        <button type="button" class="equal-sign" (click)="calculate()" [disabled]="!isExpressionValide()">=</button>
+        <button type="button" (click)="memorySave()">M+</button>
+        <button type="button" [disabled]="!memory" (click)="memoryApply()">M-</button>
+        <button type="button" class="all-clear" (click)="memoryClear()">MC</button>
+        <button type="button" (click)="back()"><-</button>
+        <button type="button" (click)="clear()">C</button>
+        <button type="button" (click)="toggleScientific()">Sc{{isScientificDisplayed?'-':'+'}}</button>
+
+    </div>
+    <div class="calculator-keys"  [@openClose]="isScientificDisplayed ? 'open' : 'closed'">
+        <button *ngFor="let key of scientificKeys" type="button" class="operator" (click)="built(key)">
+            {{key}}
+        </button>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

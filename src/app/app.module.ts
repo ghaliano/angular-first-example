@@ -8,21 +8,25 @@ import { FormsModule } from '@angular/forms';
 import { OfferEditComponent } from './offer-edit/offer-edit.component';
 import { AppRoutingModule } from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
+import { CalculatorComponent } from './calculator/calculator.component';
+import {CalculatorService} from './calculator.service';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
     JobOfferComponent,
-     OfferEditComponent
+     OfferEditComponent,
+     CalculatorComponent
   ],
   imports: [
-
+    BrowserAnimationsModule,
     HttpClientModule,
     BrowserModule,
     FormsModule,
     AppRoutingModule
   ],
-  providers: [OfferService],
+  providers: [OfferService,CalculatorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
